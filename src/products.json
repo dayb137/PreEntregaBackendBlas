@@ -1,18 +1,1 @@
-[
-  {
-    "id": 1,
-    "price": 999.99,
-    "stock": 8
-  },
-  {
-    "id": 2,
-    "title": "Notebook Lenovo",
-    "description": "14'' Ryzen 7 16GB RAM",
-    "code": "NB123",
-    "price": 1100,
-    "stock": 10,
-    "thumbnails": [
-      "img1.jpg"
-    ]
-  }
-]
+[]

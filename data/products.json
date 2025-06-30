@@ -1,0 +1,37 @@
+[
+    {
+      "id": 1,
+      "title": "Smartphone Galaxy Pro",
+      "price": 899.99,
+      "stock": 25,
+      "thumbnail": "https://ejemplo.com/images/galaxy-pro-thumb.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Laptop UltraBook Pro",
+      "price": 1299.99,
+      "stock": 15,
+      "thumbnail": "https://ejemplo.com/images/ultrabook-thumb.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Auriculares Bluetooth Premium",
+      "price": 199.99,
+      "stock": 50,
+      "thumbnail": "https://ejemplo.com/images/auriculares-thumb.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Smartwatch Fitness Pro",
+      "price": 249.99,
+      "stock": 30,
+      "thumbnail": "https://ejemplo.com/images/smartwatch-thumb.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Cámara Digital Mirrorless",
+      "price": 899.99,
+      "stock": 12,
+      "thumbnail": "https://ejemplo.com/images/camara-thumb.jpg"
+    }
+]

@@ -16,7 +16,7 @@ viewsRouter.get("/", async(req, res) =>{
 viewsRouter.get("/realTimeProducts", async(req, res) =>{
     try{
         const products = await productManager.getProducts();
-        res.render("realTimeProducts", {products});
+        res.render("realTimeProducts", { products });
     }catch(error){
         res.status(500).send({message: error.message});
     }

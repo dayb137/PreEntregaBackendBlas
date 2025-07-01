@@ -1,37 +1,149 @@
 [
-    {
-      "id": 1,
-      "title": "Smartphone Galaxy Pro",
-      "price": 899.99,
-      "stock": 25,
-      "thumbnail": "https://ejemplo.com/images/galaxy-pro-thumb.jpg"
-    },
-    {
-      "id": 2,
-      "title": "Laptop UltraBook Pro",
-      "price": 1299.99,
-      "stock": 15,
-      "thumbnail": "https://ejemplo.com/images/ultrabook-thumb.jpg"
-    },
-    {
-      "id": 3,
-      "title": "Auriculares Bluetooth Premium",
-      "price": 199.99,
-      "stock": 50,
-      "thumbnail": "https://ejemplo.com/images/auriculares-thumb.jpg"
-    },
-    {
-      "id": 4,
-      "title": "Smartwatch Fitness Pro",
-      "price": 249.99,
-      "stock": 30,
-      "thumbnail": "https://ejemplo.com/images/smartwatch-thumb.jpg"
-    },
-    {
-      "id": 5,
-      "title": "Cámara Digital Mirrorless",
-      "price": 899.99,
-      "stock": 12,
-      "thumbnail": "https://ejemplo.com/images/camara-thumb.jpg"
-    }
+  {
+    "id": 3,
+    "title": "Auriculares Bluetooth Premium",
+    "price": 199.99,
+    "stock": 50,
+    "thumbnail": "https://ejemplo.com/images/auriculares-thumb.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Smartwatch Fitness Pro",
+    "price": 249.99,
+    "stock": 30,
+    "thumbnail": "https://ejemplo.com/images/smartwatch-thumb.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Laptop HP ",
+    "price": 899.99,
+    "stock": 12,
+    "thumbnail": "https://ejemplo.com/images/camara-thumb.jpg"
+  },
+  {
+    "id": 6,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "2"
+  },
+  {
+    "id": 7,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "2"
+  },
+  {
+    "id": 8,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "2"
+  },
+  {
+    "id": 9,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "2"
+  },
+  {
+    "id": 10,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "2"
+  },
+  {
+    "id": 17,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 18,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 19,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 22,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 23,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 24,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 25,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 27,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 29,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 30,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 33,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 34,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 35,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 38,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 41,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  },
+  {
+    "id": 42,
+    "title": "laptop lenovo",
+    "price": "3000000",
+    "stock": "1"
+  }
 ]

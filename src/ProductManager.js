@@ -40,13 +40,14 @@ class ProductManager {
       const fileData = await fs.promises.readFile(this.path, "utf-8");
       const products = JSON.parse(fileData);
 
-      const productoExistente = products.find((p) => p.id === newProduct.id);
-      if (productoExistente) {
-        throw new Error("El producto ya existe");
+      
+      if (!newProduct.title || !newProduct.price || !newProduct.stock) {
+        throw new Error("FAltan campos obligatorios");
       }
 
       const newId = this.generateNewId(products);
       const product = { id: newId, ...newProduct };
+
       products.push(product);
 
       await fs.promises.writeFile(
@@ -56,7 +57,7 @@ class ProductManager {
       );
       return products;
     } catch (error) {
-      throw new Error("Error al añadir el producto -" + error.message);
+      throw new Error("Error al añadir el producto " + error.message);
     }
   }
 
@@ -95,7 +96,7 @@ class ProductManager {
       const fileData = await fs.promises.readFile(this.path, "utf-8");
       const products = JSON.parse(fileData);
 
-      const index = products.findIndex((p) => p.id === id);
+      const index = products.findIndex((p) => p.id === parseInt(id));
       if (index === -1) throw new Error(`Producto con el Id: ${id} no existe`);
 
       products.splice(index, 1);

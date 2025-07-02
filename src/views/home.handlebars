@@ -1,12 +1,12 @@
-<div>
-   <h1> HOME</h1>
+<div class="container">
+  <h1> HOME</h1>
+  <h3>📦 Lista de productos</h3>
 
-  <h2>Lista de productos </h2>
-
-  <ul id="product-list">
+  <ul id="productList">
     {{#each products}}
-      <li>{{this.title}} - {{this.price}}  </li>
+      <li>{{this.title}} - ${{this.price}}</li>
     {{/each}}
   </ul>
-
 </div>
+
+  <link rel="stylesheet" href="/css/styles.css" />

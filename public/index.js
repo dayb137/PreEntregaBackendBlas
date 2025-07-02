@@ -6,15 +6,21 @@ const productList = document.getElementById("productList");
 
 addForm.addEventListener("submit", (e) => {
   e.preventDefault();
+
   const formData = new FormData(addForm);
   const productData = {};
 
   formData.forEach((value, key) => {
     productData[key] = value;
   });
+
+  console.log(productData);
+
   socket.emit("addProduct", productData);
+
   addForm.reset();
 });
+
 
 deleteForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -22,6 +28,7 @@ deleteForm.addEventListener("submit", (e) => {
   const id = document.getElementById("id").value;
 
   socket.emit("deleteProduct", id);
+
   deleteForm.reset();
 });
 
@@ -45,3 +52,5 @@ socket.on("productsUpdated", (products) => {
     productList.appendChild(li);
   });
 });
+
+

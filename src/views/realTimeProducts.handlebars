@@ -2,9 +2,24 @@
   <h1>Productos en Tiempo Real</h1>
 
   <form id="addForm">
-    <input type="text"   name="title" placeholder="Nombre" required />
-    <input type="number"  name="price" placeholder="Precio" required />
-    <input type="number"  name="stock" placeholder="Stock" required />
+    <input type="text" name="title" placeholder="Nombre" required />
+    <input type="number" name="price" placeholder="Precio" required />
+    <input type="number" name="stock" placeholder="Stock" required />
+
+    <select name="category" required>
+        <option value="">Seleccionar categoría</option>
+        <option value="Laptops">Laptops</option>
+        <option value="Componentes">Componentes</option>
+        <option value="Periféricos">Periféricos</option>
+        <option value="Monitores">Monitores</option>
+        <option value="Almacenamiento">Almacenamiento</option>
+        <option value="Audio">Audio</option>
+        <option value="Redes">Redes</option>
+        <option value="Accesorios">Accesorios</option>
+    </select>
+
+    <textarea name="description" placeholder="Descripción del producto" rows="3"></textarea>
+
 
     <button type="submit">Agregar</button>
   </form>

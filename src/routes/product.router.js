@@ -1,13 +1,22 @@
 import express from "express";
 import ProductManager from "../ProductManager.js";
+import Product from "../models/product.model.js";
 
 
 
-const productRouter = express.Router()
+const productsRouter = express.Router()
 const productManager = new ProductManager("./data/products.json");
 
+productsRouter.get("/", async(req, res) =>{
+    try{
+        const products = await Product.find();
+        res.status(200).json({ status: "sucess", payload: products})
+    }catch(error){
+        res.status(500).json({status: "error", message : "Error al recuperar los productos"});
+    }
+});
 
-productRouter.get("/", async(req, res) =>{
+productsRouter.get("/", async(req, res) =>{
     try{
         const products = await productManager.getProducts();
         res.json(products)
@@ -16,7 +25,7 @@ productRouter.get("/", async(req, res) =>{
     }
 });
 
-productRouter.get("/realTimeProducts", async(req, res) =>{
+productsRouter.get("/realTimeProducts", async(req, res) =>{
     try{
         const products = await productManager.getProducts();
         res.json(products);
@@ -28,4 +37,4 @@ productRouter.get("/realTimeProducts", async(req, res) =>{
 
 
 
-export default productRouter;
+export default productsRouter;

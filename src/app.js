@@ -5,24 +5,18 @@ import viewsRouter from "./routes/views.router.js";
 import productRouter from "./routes/product.router.js";
 import http from "http";
 import ProductManager from "./ProductManager.js";
-import mongoose from "mongoose";
+import connectMongodb from "./config/db.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-const PORT = 8080;
+const PORT = process.env.PORT;
 
-const connectMongodb = async() => {
-  try{
-    await mongoose.connect("mongodb+srv://days:coderpass@ecommerse-cluster.ybbashp.mongodb.net/myEcommerce?retryWrites=true&w=majority&appName=ecommerse-cluster");
-    console.log("Conectado a MongoDB!")
 
-  }catch (error) {
-    console.log("Error al conectar MongoDB")
-
-  }
-}
 
 connectMongodb();
 

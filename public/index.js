@@ -35,8 +35,8 @@ deleteForm.addEventListener("submit", (e) => {
 socket.on("productAdded", (newProduct) => {
     const li = document.createElement("li");
 
-    li.innerHTML = `${newProduct.title} - $${newProduct.price} - ID: ${newProduct.id}`;
-    li.id = `product-${newProduct.id}`;
+    li.innerHTML = `${newProduct.title} - $${newProduct.price} - ID: ${newProduct._id}`;
+    li.id = `product-${newProduct._id}`;
     
     productList.appendChild(li);
 
@@ -47,8 +47,8 @@ socket.on("productsUpdated", (products) => {
     productList.innerHTML = "";
     products.forEach((p) => {
     const li = document.createElement("li");
-    li.textContent = `${p.title} - $${p.price} - ID: ${p.id}`;
-    li.id = `product-${p.id}`;
+    li.textContent = `${p.title} - $${p.price} - ID: ${p._id}`;
+    li.id = `product-${p._id}`;
     productList.appendChild(li);
   });
 });

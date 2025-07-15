@@ -1,12 +1,13 @@
 import express from "express";
+import productRouter from "./routes/product.router.js";
+import cartRouter from "./routes/cart.router.js";
+import viewsRouter from "./routes/views.router.js";
 import {engine} from "express-handlebars";
 import { Server } from "socket.io";
-import viewsRouter from "./routes/views.router.js";
-import productRouter from "./routes/product.router.js";
 import http from "http";
-import ProductManager from "./ProductManager.js";
 import connectMongodb from "./config/db.js";
 import dotenv from "dotenv";
+import Product from "./models/product.model.js";
 
 dotenv.config();
 
@@ -29,27 +30,28 @@ app.set("views","./src/views")
 
 app.use("/", viewsRouter);
 app.use("/api/products", productRouter)
+app.use("/api/carts", cartRouter)
 
 
 
-const productManager = new ProductManager("./data/products.json")
 
 io.on("connection", (socket) => {
-  console.log("Usuario conectado");
+  console.log("Cliente conectado");
 
   socket.on("addProduct", async (productData) =>{
     try{
-      const newProduct = await productManager.addProduct(productData);
-      io.emit("productAdded", newProduct);
+      const newProduct = await Product.create(productData);
+      const updatedProducts = await Product.find().lean();
+      io.emit("productsUpdated", updatedProducts);
     }catch (error){
       console.error("Error al agregar el producto", error);
     }
   });
 
-  socket.on("deleteProduct", async (id) =>{
+  socket.on("deleteProduct", async (productId) =>{
     try{
-      await productManager.deleteProductById(parseInt(id));
-      const updatedProduct = await productManager.getProducts()
+      await Product.findByIdAndDelete(productId);
+      const updatedProduct = await Product.find().lean();
       io.emit("productsUpdated", updatedProduct);
     }catch (error){
       console.error("Error al eliminar el producto", error)

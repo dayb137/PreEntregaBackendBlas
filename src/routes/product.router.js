@@ -7,7 +7,7 @@ const productsRouter = express.Router()
 
 productsRouter.get("/", async(req, res) =>{
     try{
-        const { limit = 10 , page =1, sort, category } = req.query;
+        const { limit = 10 , page =1 } = req.query;
 
         const data = await Product.paginate({}, {limit, page});
         const products = data.docs;

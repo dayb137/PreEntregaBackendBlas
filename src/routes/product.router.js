@@ -7,7 +7,16 @@ const productsRouter = express.Router()
 
 productsRouter.get("/", async(req, res) =>{
     try{
-        const { limit = 10 , page =1 } = req.query;
+        const { limit = 10 , page =1, sort, category } = req.query;
+
+        const option = {limit: parseInt, page: parseInt(page), lean: true};
+
+        if(sort ){
+            option.sort = {price: sort === "asc" ? 1 : -1};
+        }
+
+        const filter = {};
+        if (category) filter.category = category;
 
         const data = await Product.paginate({}, {limit, page});
         const products = data.docs;

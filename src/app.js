@@ -8,6 +8,7 @@ import http from "http";
 import connectMongodb from "./config/db.js";
 import dotenv from "dotenv";
 import Product from "./models/product.model.js";
+import __dirname from "../dirname.js";
 
 dotenv.config();
 
@@ -15,22 +16,21 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-const PORT = process.env.PORT;
-
-
-
 connectMongodb();
-
-app.use(express.json());
-app.use(express.static("public"));
 
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
-app.set("views","./src/views")
+app.set("views", __dirname + "/src/views")
 
-app.use("/", viewsRouter);
+const PORT = process.env.PORT;
+app.use(express.json());
+app.use(express.static(__dirname + "/public"));
+
+
+
 app.use("/api/products", productRouter)
 app.use("/api/carts", cartRouter)
+app.use("/", viewsRouter);
 
 
 

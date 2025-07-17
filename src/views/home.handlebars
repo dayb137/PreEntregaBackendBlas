@@ -2,42 +2,53 @@
   <h1> HOME</h1>
   <h3>📦 Lista de productos</h3>
 
+      <a href="/carts/{{cartId}}"><button class="details">🛒 Ver Carrito</button></a>
+  <div class="container">
+    <strong>Ordenar por precio:</strong>
+    <a href="/?sort=asc">Ascendente</a> |
+    <a href="/?sort=desc">Descendente</a>
+  </div>
+
+  <div class="container">
+    <strong>Categoría:</strong>
+    <a href="/?category=Laptops">Laptops</a> |
+    <a href="/?category=Periféricos">Periféricos</a> |
+    <a href="/?category=Monitores">Monitores</a> |
+    <a href="/?category=Componentes">Componentes</a> |
+    <a href="/">Todas</a>
+  </div>
+
+  
+
   <ul id="productList">
     {{#each products}}
-      <li id="productList" >{{this.title}} - ${{this.price}}</li>
+      <li>
+        <div class="productInfo">
+
+        <strong>{{this.title}}</strong>
+        <p><strong>${{this.price}}</strong></p>
     <p><strong>Categoría:</strong> {{this.category}}</p>
 
-      <a href="/products/{{this._id}}">Ver detalles</a>
-      <button class="addToCart" data-id="{{this._id}}">Agregar al carrito</button>
-    </div>
+      <a href="/products/{{this._id}}"><button class="details">Ver detalles</button></a>
+
+      <button class="addToCart" data-productid="{{this._id}}" data-cartid="{{../cartId}}">Agregar al carrito</button>
+
+
+   
+      </div>
+    </li>
   {{/each}}
+</ul>
+
+
+
 </div>
 
-<div class="container">
   {{#each links}}
     <a href="{{this.link}}">{{this.text}}</a>
   {{/each}}
 
-</div>
-<script>
-  const cartId = "{{cartId}}";
-  document.querySelectorAll(".addToCart").forEach(button => {
-    button.addEventListener("click", async () => {
-      const pid = button.getAttribute("data-id");
-      try {
-        const res = await fetch(`/api/carts/${cartId}/product/${pid}`, {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({ quantity: 1 })
-        });
-        const data = await res.json();
-        if (res.ok) alert("Producto agregado");
-        else alert(data.message);
-      } catch (err) {
-        alert("Error al agregar");
-      }
-    });
-  });
-</script>
+
+<script src="/home.js"></script>
 
 <link rel="stylesheet" href="/css/styles.css" />
